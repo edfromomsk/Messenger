@@ -1,17 +1,17 @@
-var messageTemplate = document.querySelector('#message-template').content;
-var newchatMessage = messageTemplate.querySelector('.chat-message');
-var newMessageText = document.querySelector('.chat-form-input');
-var chatForm = document.querySelector('.chat-form');
-var chat = document.querySelector('.chat-content');
-var messages = chat.children;
+let messageTemplate = document.querySelector('#message-template').content;
+let newchatMessage = messageTemplate.querySelector('.chat-message');
+let newMessageText = document.querySelector('.chat-form-input');
+let chatForm = document.querySelector('.chat-form');
+let chat = document.querySelector('.chat-content');
+let messages = chat.children;
 
 
 chatForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    var message = newchatMessage.cloneNode(true);
+    let message = newchatMessage.cloneNode(true);
     
-    var text = newMessageText.value;
-    var messageText = message.querySelector('.chat-message-text');
+    let text = newMessageText.value;
+    let messageText = message.querySelector('.chat-message-text');
     messageText.textContent = text;
     
     
@@ -20,8 +20,8 @@ chatForm.addEventListener('submit', function (evt) {
     addDeletekHandler(message);
 });
 
-var addDeletekHandler = function (message) {
-  var deleteMessage = message.querySelector('.chat-message-button');
+let addDeletekHandler = function (message) {
+  let deleteMessage = message.querySelector('.chat-message-button');
   deleteMessage.addEventListener('click', function () {
     message.remove();
     
@@ -29,6 +29,6 @@ var addDeletekHandler = function (message) {
   });
 };
 
-for (var i = 0; i < messages.length; i++) {
+for (let i = 0; i < messages.length; i++) {
   addDeletekHandler(messages[i]);
 }
